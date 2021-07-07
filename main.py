@@ -22,7 +22,8 @@ def main():
         ax.axis('equal')
         values = [election_result[party] for party in parties]
         ax.pie(values, labels=parties, autopct='%1.2f%%')
-        plot.show()
+        plot.pause(5)
+        plot.close(1)
 
 
 if __name__ == '__main__':

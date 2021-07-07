@@ -6,7 +6,7 @@ def generate_voters(number, parties):
     """
     A method to generate a number of voters
     :param number: the number of voters to generate
-    :param parties: a numpy array of the available parties
+    :param parties: an array of the available parties
     :return: an array of voters
     """
     voters = [0 for i in range(number)]

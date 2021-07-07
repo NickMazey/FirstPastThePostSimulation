@@ -5,7 +5,7 @@ import matplotlib.pyplot as plot
 
 
 def main():
-    number_of_parties = 8
+    number_of_parties = 50
     parties = []
     for i in range(number_of_parties):
         parties.append(i)

@@ -1,6 +1,3 @@
-import random
-
-
 class Voter:
     """
     Represents voters in the election

@@ -26,7 +26,7 @@ def generate_preferences(parties):
 
     if random.randint(0, 1) == 0:
         random.shuffle(first_half)
-        return first_half
+        return first_half.copy()
     else:
         random.shuffle(second_half)
-        return second_half
+        return second_half.copy()

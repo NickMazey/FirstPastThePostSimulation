@@ -9,16 +9,21 @@ def main():
     parties = []
     for i in range(number_of_parties):
         parties.append(i)
-    voters = generator.generate_voters(10000, parties)
+    number_of_voters = 10000
+    voters = generator.generate_voters(number_of_voters, parties)
     election_number = 100
-    previous_election_result = {party: 0 for party in parties}
+    previous_election_result = {party: number_of_voters for party in parties}
     for i in range(election_number):
+        to_remove = []
+        for party in parties:
+            if previous_election_result[party] < len(voters) / 100:
+                to_remove.append(party)
+        for party in to_remove:
+            parties.remove(party)
+
         election_result = {party: 0 for party in parties}
         for voter in voters:
             election_result[voter.vote(parties, previous_election_result)] += 1
-        for party in parties:
-            if election_result[party] < len(voters) / 100:
-                parties.remove(party)
         previous_election_result = election_result
         fig = plot.figure()
         ax = fig.add_axes([0, 0, 1, 1])

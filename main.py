@@ -5,7 +5,10 @@ import matplotlib.pyplot as plot
 
 
 def main():
-    parties = [0, 1, 2, 3, 4, 5, 6, 7]
+    number_of_parties = 8
+    parties = []
+    for i in range(number_of_parties):
+        parties.append(i)
     voters = generator.generate_voters(10000, parties)
     election_number = 100
     previous_election_result = {party: 0 for party in parties}
